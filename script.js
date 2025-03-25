@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("collection.json") // Make sure this file exists
+    fetch("collection.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Network response was not ok");
