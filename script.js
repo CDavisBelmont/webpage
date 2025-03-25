@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("collection.json")
         .then(response => response.json())
         .then(data => {
+            console.log(data); // Check the data in the console
             const container = document.getElementById("collection");
             container.innerHTML = ""; // Clear previous content
             data.forEach(item => {
