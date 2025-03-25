@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     fetch("collection.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
             const container = document.getElementById("collection");
             container.innerHTML = ""; // Clear previous content
@@ -16,10 +11,36 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h2>${item.title}</h2>
                     <img src="${item.image}" alt="${item.title}" width="200">
                     <p>${item.description}</p>
-                    <a href="${item.link}">View More</a>
+                    <button class="view-more" data-item="${item.title}">View More</button>
                 `;
                 container.appendChild(div);
+
+                // Add click event for the "View More" button
+                div.querySelector('.view-more').addEventListener('click', function() {
+                    showModal(item);
+                });
             });
         })
         .catch(error => console.error("Error loading JSON:", error));
 });
+
+// Function to display a modal with item details
+function showModal(item) {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>${item.title}</h2>
+            <img src="${item.image}" alt="${item.title}" width="300">
+            <p>${item.description}</p>
+            <a href="/" class="back-to-collection">Back to Collection</a>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Close modal
+    modal.querySelector('.close').addEventListener('click', () => {
+        modal.remove();
+    });
+}
