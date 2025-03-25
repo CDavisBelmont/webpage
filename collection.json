@@ -1,18 +1,15 @@
 [
   {
-    "name": "Red Wool Sweater",
-    "material": "Wool",
-    "brand": "Uniqlo",
+    "title": "Red Jacket",
     "image": "images/sweater.png",
-    "care_instructions": "Hand wash only",
-    "season": "Winter"
+    "description": "A bright red jacket, perfect for winter.",
+    "link": "red-jacket.html"
   },
   {
-    "name": "Black Leather Boots",
-    "material": "Leather",
-    "brand": "Dr. Martens",
+    "title": "Blue Sneakers",
     "image": "images/boots.png",
-    "care_instructions": "Use leather conditioner",
-    "season": "All seasons"
+    "description": "Comfortable sneakers for daily wear.",
+    "link": "blue-sneakers.html"
   }
 ]
+
