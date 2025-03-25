@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Red Wool Sweater",
+    "material": "Wool",
+    "brand": "Uniqlo",
+    "image": "images/sweater.jpg",
+    "care_instructions": "Hand wash only",
+    "season": "Winter"
+  },
+  {
+    "name": "Black Leather Boots",
+    "material": "Leather",
+    "brand": "Dr. Martens",
+    "image": "images/boots.jpg",
+    "care_instructions": "Use leather conditioner",
+    "season": "All seasons"
+  }
+]
