@@ -1,13 +1,15 @@
 [
   {
     "title": "Red Jacket",
-    "image": "images/sweater.png",
+    "image": "images/red-jacket.jpg",
     "description": "A bright red jacket, perfect for winter.",
+    "link": "red-jacket.html"
   },
   {
     "title": "Blue Sneakers",
-    "image": "images/boots.png",
+    "image": "images/blue-sneakers.jpg",
     "description": "Comfortable sneakers for daily wear.",
+    "link": "blue-sneakers.html"
   }
 ]
 
