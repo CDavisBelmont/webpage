@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 div.classList.add("collection-item");
                 div.innerHTML = `
                     <h2>${item.title}</h2>
-                    <img src="${item.image}" alt="${item.title}" width="200">
                     <p>${item.description}</p>
                     <a href="${item.link}">View More</a>
                 `;
