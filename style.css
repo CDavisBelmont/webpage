@@ -14,19 +14,22 @@ h1 {
     background-color: #ffe6f1; /* Soft pink background */
     padding: 15px;
     margin-top: 15px;
+    margin-bottom: 20px; /* Space at the bottom */
     border-radius: 12px; /* More rounded corners */
-    border: 1px solid #ff99cc; /* Subtle pink border */
+    border: 1px solid navy; /* Navy border */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for a more delicate look */
-    display: inline-block;
-    width: 60%; /* Smaller width */
+    display: block; /* Make the box take up full width */
+    width: 80%; /* Adjusted width */
     text-align: left;
     font-size: 1.1em; /* Slightly larger text for readability */
+    margin-left: auto;
+    margin-right: auto; /* Center the box */
 }
 
 .metadata-box h3 {
     margin-top: 0;
     font-size: 1.3em;
-    color: #ff66b2; /* Soft pink color to match the theme */
+    color: navy; /* Navy color for headings */
     font-weight: bold;
 }
 
@@ -38,5 +41,5 @@ h1 {
 
 .metadata-box strong {
     font-weight: bold;
-    color: #ff66b2; /* Use the soft pink color for emphasis */
+    color: navy; /* Navy color for emphasis */
 }
