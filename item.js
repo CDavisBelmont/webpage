@@ -23,6 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("item-description").textContent = item.description;
             document.getElementById("item-image").src = `images/${item.image}`;
             document.getElementById("item-image").alt = item.title;
+
+            // ✅ JSON-LD metadata
+            const jsonld = {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": item.title,
+                "description": item.description,
+                "brand": item.brand,
+                "category": item.category,
+                "image": `images/${item.image}`,
+                "url": window.location.href
+            };
+
+            const script = document.createElement("script");
+            script.type = "application/ld+json";
+            script.textContent = JSON.stringify(jsonld);
+            document.head.appendChild(script);
         })
         .catch(error => {
             console.error("Error loading item data:", error);
