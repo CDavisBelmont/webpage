@@ -16,12 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (item) {
                 // Update the page with item data
                 document.getElementById("item-title").innerText = item.title;
+                document.title = item.title;  // Set the browser tab title
                 document.getElementById("item-image").src = `images/${item.image}`;
                 document.getElementById("item-description").innerText = item.description;
                 document.getElementById("item-brand").innerText = item.brand;
                 document.getElementById("item-category").innerText = item.category;
-
-                // Optionally, add other metadata here, like JSON-LD if needed
             } else {
                 console.error("Item not found!");
             }
