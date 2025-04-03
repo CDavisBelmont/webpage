@@ -1,45 +1,43 @@
-/* Keep your existing styles */
-body {
-    font-family: "Times New Roman", Times, serif;
-    background-color: pink;
-    text-align: center;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the item ID from the URL (the part after "item-")
+    const itemId = window.location.pathname.split('/').pop().replace('.html', '');
 
-h1 {
-    color: darkblue;
-}
+    fetch("collection.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Find the item in the JSON data by matching the ID
+            const item = data.find(item => item.id === itemId);
 
-/* Cuter, smaller metadata box */
-.metadata-box {
-    background-color: #ffe6f1; /* Soft pink background */
-    padding: 15px;
-    margin-top: 15px;
-    margin-bottom: 20px; /* Space at the bottom */
-    border-radius: 12px; /* More rounded corners */
-    border: 1px solid navy; /* Navy border */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for a more delicate look */
-    display: block; /* Make the box take up full width */
-    width: 80%; /* Adjusted width */
-    text-align: left;
-    font-size: 1.1em; /* Slightly larger text for readability */
-    margin-left: auto;
-    margin-right: auto; /* Center the box */
-}
+            // If the item is found, update the page with its data
+            if (item) {
+                document.getElementById("item-title").textContent = item.title;
+                document.getElementById("item-image").src = "images/" + item.image;
+                document.getElementById("item-image").alt = item.title;
+                document.getElementById("item-description").textContent = item.description;
 
-.metadata-box h3 {
-    margin-top: 0;
-    font-size: 1.3em;
-    color: navy; /* Navy color for headings */
-    font-weight: bold;
-}
-
-.metadata-box p {
-    font-size: 1em;
-    margin: 10px 0;
-    color: #333; /* Dark gray text for better readability */
-}
-
-.metadata-box strong {
-    font-weight: bold;
-    color: navy; /* Navy color for emphasis */
-}
+                // Optionally: You can also add metadata directly on the page if needed
+                const metadataBox = document.createElement('div');
+                metadataBox.classList.add('metadata-box');
+                metadataBox.innerHTML = `
+                    <h3>Product Details</h3>
+                    <p><strong>Brand:</strong> ${item.brand}</p>
+                    <p><strong>Category:</strong> ${item.category}</p>
+                `;
+                document.body.appendChild(metadataBox);
+            } else {
+                // If the item is not found, show an error
+                document.getElementById("item-title").textContent = "Item not found";
+                document.getElementById("item-description").textContent = "Sorry, this item is not available.";
+            }
+        })
+        .catch(error => {
+            console.error("Error loading item data:", error);
+            document.getElementById("item-title").textContent = "Error loading item";
+            document.getElementById("item-description").textContent = "There was an error retrieving the item data.";
+        });
+});
