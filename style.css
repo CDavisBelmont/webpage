@@ -1,3 +1,4 @@
+/* Keep your existing styles */
 body {
     font-family: "Times New Roman", Times, serif;
     background-color: pink;
@@ -8,3 +9,30 @@ h1 {
     color: darkblue;
 }
 
+/* New styling for the metadata box */
+.metadata-box {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 80%; /* Adjust width as necessary */
+    text-align: left; /* Align text to the left for readability */
+}
+
+.metadata-box h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: darkblue; /* Keep the color consistent with the rest of the page */
+}
+
+.metadata-box p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.metadata-box strong {
+    font-weight: bold;
+}
