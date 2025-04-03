@@ -1,13 +1,12 @@
 [
   {
+    "id": "red-jacket",
     "title": "Red Jacket",
-    "description": "A Simple Red Jacket",
-    "link": "red-jacket.html"
+    "description": "A Simple Red Jacket"
   },
   {
-    "title": "Boots",
-    "description": "Everyday Boots",
-    "link": "blue-sneakers.html"
+    "id": "blue-sneakers",
+    "title": "Blue Sneakers",
+    "description": "Everyday Boots"
   }
 ]
-
