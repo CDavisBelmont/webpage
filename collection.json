@@ -3,7 +3,7 @@
     "id": "red-jacket",
     "title": "Red Jacket",
     "description": "A Simple Red Jacket",
-    "image": "sweater.png"
+    "image": "sweater.png",
     "brand": "FashionCo",
     "category": "Outerwear"
   },
@@ -11,7 +11,7 @@
     "id": "blue-sneakers",
     "title": "Blue Sneakers",
     "description": "Everyday Boots",
-    "image": "boots.png"
+    "image": "boots.png",
     "brand": "SneakerWorld",
     "category": "Footwear"
   }
