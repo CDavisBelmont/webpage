@@ -9,30 +9,34 @@ h1 {
     color: darkblue;
 }
 
-/* New styling for the metadata box */
+/* Cuter, smaller metadata box */
 .metadata-box {
-    background-color: #f4f4f4; /* Light gray background */
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffe6f1; /* Soft pink background */
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 12px; /* More rounded corners */
+    border: 1px solid #ff99cc; /* Subtle pink border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for a more delicate look */
     display: inline-block;
-    width: 80%; /* Adjust width as necessary */
-    text-align: left; /* Align text to the left for readability */
+    width: 60%; /* Smaller width */
+    text-align: left;
+    font-size: 1.1em; /* Slightly larger text for readability */
 }
 
 .metadata-box h3 {
     margin-top: 0;
-    font-size: 1.2em;
-    color: darkblue; /* Keep the color consistent with the rest of the page */
+    font-size: 1.3em;
+    color: #ff66b2; /* Soft pink color to match the theme */
+    font-weight: bold;
 }
 
 .metadata-box p {
     font-size: 1em;
-    margin: 5px 0;
+    margin: 10px 0;
+    color: #333; /* Dark gray text for better readability */
 }
 
 .metadata-box strong {
     font-weight: bold;
+    color: #ff66b2; /* Use the soft pink color for emphasis */
 }
