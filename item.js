@@ -3,24 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const itemId = window.location.pathname.split('/').pop().replace('.html', '');
 
     fetch("collection.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
-            // Find the item in the JSON data by matching the ID
-            const item = data.find(item => item.id === itemId);
+            // Find the item by matching the ID from the URL
+            const item = data.find(i => i.id === itemId);
 
-            // If the item is found, update the page with its data
             if (item) {
+                // Update the page with the item data
                 document.getElementById("item-title").textContent = item.title;
                 document.getElementById("item-image").src = "images/" + item.image;
                 document.getElementById("item-image").alt = item.title;
                 document.getElementById("item-description").textContent = item.description;
 
-                // Optionally: You can also add metadata directly on the page if needed
+                // Optionally: Add metadata box
                 const metadataBox = document.createElement('div');
                 metadataBox.classList.add('metadata-box');
                 metadataBox.innerHTML = `
