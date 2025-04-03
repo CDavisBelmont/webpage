@@ -22,6 +22,26 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("item-description").textContent = item.description;
             document.getElementById("item-image").src = `images/${item.image}`; 
             document.getElementById("item-image").alt = item.title;
+
+            // Create JSON-LD metadata
+            const jsonLd = {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "name": item.title,
+                "description": item.description,
+                "image": `images/${item.image}`,
+                "brand": {
+                    "@type": "Brand",
+                    "name": item.brand
+                },
+                "category": item.category
+            };
+
+            // Insert JSON-LD into the page
+            const script = document.createElement("script");
+            script.type = "application/ld+json";
+            script.textContent = JSON.stringify(jsonLd, null, 2);
+            document.head.appendChild(script);
         })
         .catch(error => console.error("Error loading item data:", error));
 });
