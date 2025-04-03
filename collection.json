@@ -3,12 +3,12 @@
     "id": "red-jacket",
     "title": "Red Jacket",
     "description": "A Simple Red Jacket",
-    "image": "red-jacket.jpg"
+    "image": "sweater.png"
   },
   {
     "id": "blue-sneakers",
     "title": "Blue Sneakers",
     "description": "Everyday Boots",
-    "image": "blue-sneakers.jpg"
+    "image": "boots.png"
   }
 ]
