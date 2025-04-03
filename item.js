@@ -1,30 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Get the item ID from the URL query string (e.g., item-template.html?id=red-jacket)
-    const urlParams = new URLSearchParams(window.location.search);
-    const itemId = urlParams.get('id');
+/* Keep your existing styles */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: pink;
+    text-align: center;
+}
 
-    fetch("collection.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Find the item in the data based on the ID from the URL
-            const item = data.find(item => item.id === itemId);
-            if (item) {
-                // Update the page with item data
-                document.getElementById("item-title").innerText = item.title;
-                document.getElementById("item-image").src = `images/${item.image}`;
-                document.getElementById("item-description").innerText = item.description;
-                document.getElementById("item-brand").innerText = item.brand;
-                document.getElementById("item-category").innerText = item.category;
+h1 {
+    color: darkblue;
+}
 
-                // Optionally, add other metadata here, like JSON-LD if needed
-            } else {
-                console.error("Item not found!");
-            }
-        })
-        .catch(error => console.error("Error loading JSON:", error));
-});
+/* Cuter, smaller metadata box */
+.metadata-box {
+    background-color: #ffe6f1; /* Soft pink background */
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px; /* Space at the bottom */
+    border-radius: 12px; /* More rounded corners */
+    border: 1px solid navy; /* Navy border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for a more delicate look */
+    display: block; /* Make the box take up full width */
+    width: 80%; /* Adjusted width */
+    text-align: left;
+    font-size: 1.1em; /* Slightly larger text for readability */
+    margin-left: auto;
+    margin-right: auto; /* Center the box */
+}
+
+.metadata-box h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: navy; /* Navy color for headings */
+    font-weight: bold;
+}
+
+.metadata-box p {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #333; /* Dark gray text for better readability */
+}
+
+.metadata-box strong {
+    font-weight: bold;
+    color: navy; /* Navy color for emphasis */
+}
